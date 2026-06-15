@@ -14,11 +14,9 @@ export default function Chapter1(){
 const [index,setIndex] = useState(0);
 
 
-
 const [playerName,setPlayerName] = useState("");
 
 const [playerTag,setPlayerTag] = useState("");
-
 
 
 const [elfariaIntroduced,setElfariaIntroduced] = useState(false);
@@ -39,8 +37,6 @@ function next(){
 
 
 
-// stop clicking past name input
-
 if(scene.type === "nameInput"){
 
 return;
@@ -50,7 +46,6 @@ return;
 
 
 
-// reveal Elfi after introduction
 
 if(
 
@@ -70,9 +65,7 @@ setElfariaIntroduced(true);
 
 if(index < chapter1Story.length - 1){
 
-
 setIndex(index + 1);
-
 
 }
 
@@ -94,13 +87,11 @@ window.location.href="/chapter2";
 
 
 
-
-
-function saveName(){
+function confirmName(){
 
 
 
-if(!playerName || !playerTag){
+if(playerName.trim()===""){
 
 return;
 
@@ -128,18 +119,6 @@ playerTag
 
 
 
-// reset trust only when starting new game
-
-localStorage.setItem(
-
-"trust",
-
-"0"
-
-);
-
-
-
 setIndex(index + 1);
 
 
@@ -152,9 +131,7 @@ setIndex(index + 1);
 
 
 
-
-
-function getSpeaker(){
+function speaker(){
 
 
 
@@ -178,13 +155,9 @@ return "???";
 
 
 
-
-
-if(scene.speaker === "PLAYER"){
-
+if(scene.speaker==="PLAYER"){
 
 return playerName;
-
 
 }
 
@@ -202,10 +175,7 @@ return scene.speaker;
 
 
 
-
-
-
-function getText(){
+function text(){
 
 
 
@@ -228,15 +198,15 @@ playerName || "you"
 
 
 
-
 return(
 
 
 
-<main
+<div
 
 
 onClick={next}
+
 
 
 className="
@@ -264,16 +234,18 @@ cursor-pointer
 
 
 
-<div className="
+<div
+
+className="
 
 max-w-5xl
 
 text-center
 
-">
+"
 
 
-
+>
 
 
 
@@ -284,16 +256,15 @@ text-center
 scene.speaker && (
 
 
-
 <h2
 
 className="
 
 text-4xl
 
-text-blue-300
-
 font-bold
+
+text-blue-300
 
 mb-8
 
@@ -302,10 +273,7 @@ mb-8
 
 >
 
-
-{getSpeaker()}
-
-
+{speaker()}
 
 </h2>
 
@@ -314,7 +282,6 @@ mb-8
 )
 
 }
-
 
 
 
@@ -333,12 +300,10 @@ leading-relaxed
 
 "
 
+
 >
 
-
-{getText()}
-
-
+{text()}
 
 </p>
 
@@ -356,18 +321,15 @@ scene.type === "nameInput" && (
 
 
 
-
 <div
 
-
 onClick={(e)=>e.stopPropagation()}
-
 
 className="
 
 mt-10
 
-space-y-5
+space-y-6
 
 "
 
@@ -378,26 +340,29 @@ space-y-5
 
 
 
-
 <input
+
+
+autoFocus
 
 
 className="
 
 text-black
 
+text-2xl
+
 p-4
 
 rounded-lg
-
-text-xl
 
 w-full
 
 "
 
 
-placeholder="Your name"
+placeholder="Enter your name"
+
 
 
 value={playerName}
@@ -405,6 +370,7 @@ value={playerName}
 
 
 onChange={(e)=>
+
 
 setPlayerName(e.target.value)
 
@@ -420,7 +386,6 @@ setPlayerName(e.target.value)
 
 
 
-
 <input
 
 
@@ -428,11 +393,11 @@ className="
 
 text-black
 
+text-2xl
+
 p-4
 
 rounded-lg
-
-text-xl
 
 w-full
 
@@ -461,10 +426,7 @@ e.target.value.replace(/\D/g,"")
 
 
 
-
-
 />
-
 
 
 
@@ -476,7 +438,15 @@ e.target.value.replace(/\D/g,"")
 <button
 
 
-onClick={saveName}
+onClick={(e)=>{
+
+
+e.stopPropagation();
+
+confirmName();
+
+
+}}
 
 
 
@@ -484,11 +454,11 @@ className="
 
 bg-blue-600
 
-px-6
+px-8
 
-py-3
+py-4
 
-rounded-lg
+rounded-xl
 
 text-xl
 
@@ -496,7 +466,6 @@ text-xl
 
 
 >
-
 
 
 Confirm
@@ -510,16 +479,13 @@ Confirm
 
 
 
-
-
-
 </div>
 
 
 
-
-
 )
+
+
 
 }
 
@@ -529,21 +495,19 @@ Confirm
 
 
 
-
-
 </div>
 
 
 
 
 
-</main>
 
-
+</div>
 
 
 
 )
+
 
 
 }
