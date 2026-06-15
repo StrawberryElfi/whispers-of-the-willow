@@ -160,9 +160,13 @@ text:"Something alive."
 {
 type:"dialogue",
 speaker:"???",
-text:"\"Can you hear me?\""
+text:"\"Can you hear me chosen Conduit\""
 },
 
+{
+type:"thought",
+text:"\"Chosen...Conduit?\""
+},
 
 {
 type:"dialogue",
@@ -173,7 +177,7 @@ text:"\"Please... wake up.\""
 
 {
 type:"narration",
-text:"Your eyes slowly open."
+text:"Your eyes slowly open, trying to adjust to the light ."
 },
 
 
@@ -258,7 +262,7 @@ text:"Then the moonlight reveals her."
 
 {
 type:"narration",
-text:"Long midnight-blue hair flows behind her, reflecting the pale light of the moon."
+text:"Long midnight-blue hair flows behind her with hints of silver like shooting stars."
 },
 
 
@@ -267,12 +271,20 @@ type:"narration",
 text:"She looks like something from a forgotten legend."
 },
 
+{
+type:"narration",
+text:"The pointy ears give away her true nature."
+},
 
 {
 type:"narration",
 text:"An elf."
 },
 
+{
+type:"narration",
+text:"One you've only seen in movies or read about in books."
+},
 
 {
 type:"narration",
@@ -321,7 +333,7 @@ text:"\"That explains why you look so lost.\""
 {
 type:"dialogue",
 speaker:"???",
-text:"\"Tell me... do you remember your own name?\""
+text:"\"Tell me... do you remember your own name chosen Conduit?\""
 },
 
 
@@ -334,7 +346,7 @@ text:"\"My name...?\""
 {
 type:"nameInput",
 speaker:"???",
-text:"\"If you remember it... tell me.\""
+text:"\"If you remember it please do tell me.\""
 },
 
 
@@ -348,7 +360,7 @@ text:"\"Good.\""
 {
 type:"dialogue",
 speaker:"???",
-text:"\"A name is precious. It is proof that you existed before this moment.\""
+text:"\"A name is precious. It is proof that you existed before this moment and having to call you Conduit feels weird.\""
 },
 
 
@@ -387,7 +399,7 @@ text:"\"I am the Warden of the Whispering Willow.\""
 
 {
 type:"dialogue",
-speaker:"Elfaria Fleur De Willows",
+speaker:"Elfaria",
 text:"\"Or you can just call me Elfi.\""
 },
 
@@ -400,41 +412,34 @@ text:"From this moment forward, the name Elfi stays with you."
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"The Willow brought you here.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"Not me.\""
-},
-
-
-{
-type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"I am only the one who protects it.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"But I understand your confusion.\""
+speaker:"Elfaria",
+text:"\"I understand your confusion.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"You deserve to know why you were chosen.\""
 },
 
 {
 type:"narration",
-text:"Elfi reaches her hand toward the ancient Willow behind her."
+text:"Elfaria reaches her hand toward the ancient Willow behind her."
 },
 
 
@@ -453,22 +458,22 @@ text:"\"The Willow does not choose people because of strength.\""
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"It does not seek warriors, kings, or heroes.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"It searches for something much rarer.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"A soul that can hear its voice.\""
+speaker:"Elfaria",
+text:"\"A kind soul.\""
 },
 
 
@@ -528,7 +533,7 @@ text:"They carried memories of every life that grew beneath their branches."
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"The Willows protected this world long before humans built their first kingdoms.\""
 },
 
@@ -577,10 +582,15 @@ text:"They wanted control over life itself."
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"The Willows were hunted because people feared something they could not own.\""
+speaker:"Elfaria",
+text:"\"The Willows were hunted because people feared something they could not control.\""
 },
 
+{
+type:"dialogue",
+speaker:"Elfaria",
+text:"\"They call themselves the Defilers.\""
+},
 
 {
 type:"narration",
@@ -593,6 +603,10 @@ type:"narration",
 text:"Their forests burned."
 },
 
+{
+type:"narration",
+text:"Animals fled."
+},
 
 {
 type:"narration",
@@ -608,7 +622,7 @@ text:"Until only one remained."
 
 {
 type:"narration",
-text:"The Whispering Willow."
+text:"The Whispering Willow of the elven kingdom, her kingdom."
 },
 
 
@@ -620,8 +634,8 @@ text:"The last living memory of an ancient world."
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"And I was chosen to protect it.\""
+speaker:"Elfaria",
+text:"\"I wasn't chosen to protect it, but because I was the only one left, the willow had no choice but to bind itself to me.\""
 },
 
 
@@ -633,7 +647,7 @@ text:"The vision changes again."
 
 {
 type:"narration",
-text:"You see Elfi standing before the Willow many centuries ago."
+text:"You see Elfaria standing before the Willow many centuries ago."
 },
 
 
@@ -656,28 +670,16 @@ text:"There is no red."
 
 
 {
-type:"narration",
-text:"No curse."
-},
-
-
-{
-type:"narration",
-text:"No burden."
-},
-
-
-{
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"I was not born a warrior.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"I only wanted to protect the life growing around the Willow.\""
+speaker:"Elfaria",
+text:"\"I only wanted to enjoy the world around me.\""
 },
 
 
@@ -695,9 +697,13 @@ text:"A battle erupts."
 
 {
 type:"narration",
-text:"Hunters break through the sacred forest."
+text:"Defilers break through the sacred forest."
 },
 
+{
+type:"narration",
+text:"One by one the elf's head were decorated on spikes like trophies."
+},
 
 {
 type:"narration",
@@ -710,30 +716,29 @@ type:"narration",
 text:"And Elfi stands alone."
 },
 
-
 {
-type:"dialogue",
-speaker:"Hunter",
-text:"\"Move aside, elf.\""
+type:"narration",
+text:"The one elf that had been overlooked by her own people because she was not strong enough to fight."
 },
 
 
 {
 type:"dialogue",
-speaker:"Hunter",
-text:"\"That tree belongs to us now.\""
+speaker:"Defiler",
+text:"\"Move aside, elf. Unless you want to join them.\""
+},
+
+
+{
+type:"dialogue",
+speaker:"Defiler",
+text:"\"That tree belongs to us now and if you listen we'll consider letting you live and warm our beds.\""
 },
 
 
 {
 type:"narration",
-text:"Elfi trembles."
-},
-
-
-{
-type:"narration",
-text:"Not because she is weak."
+text:"Elfaria trembles."
 },
 
 
@@ -745,28 +750,28 @@ text:"Because she knows what happens if she fails."
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"I cannot heal this world.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"I cannot save everyone.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"But I can stand here.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"And I can stop you.\""
 },
 
@@ -779,7 +784,7 @@ text:"The Willow releases a single tear."
 
 {
 type:"narration",
-text:"The tear falls into Elfi's hands."
+text:"The tear falls into Elfaria's hands."
 },
 
 
@@ -803,13 +808,13 @@ text:"A weapon created from the Willow's sorrow."
 
 {
 type:"narration",
-text:"A weapon bound to Elfi's life."
+text:"A weapon bound to Elfaria's life."
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"The Silver Spear of the Willow's Tear.\""
 },
 
@@ -822,7 +827,7 @@ text:"But the pact came with a price."
 
 {
 type:"narration",
-text:"The moment Elfi accepted the spear, the magic changed her."
+text:"The moment Elfaria accepted the spear, the magic changed her."
 },
 
 
@@ -870,14 +875,14 @@ text:"But the other became crimson."
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"The Willow gave me the strength to protect it.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"But it also made me carry the cost of that protection.\""
 },
 
@@ -944,7 +949,7 @@ text:"You return beneath the Whispering Willow."
 
 {
 type:"narration",
-text:"Elfi looks exhausted."
+text:"Elfaria looks exhausted."
 },
 
 
@@ -956,28 +961,28 @@ text:"For a moment, you see the centuries of loneliness she carries."
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"That is why the Willow chose you.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"Because after thousands of years... it finally heard a soul from another world.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"A soul untouched by this world's greed.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"A soul that may be able to understand it.\""
 },
 
@@ -989,21 +994,21 @@ text:"How do you respond?",
 choices:[
 
 {
-text:"\"You carried this burden alone for so long... I want to help you.\"",
+text:"\"You carried this burden alone for so long Elfi, is there anything I can do to help?\"",
 trust:3,
 response:"Elfi looks surprised. A small smile appears on her face."
 },
 
 
 {
-text:"\"Your strength is incredible... but you shouldn't have had to suffer alone.\"",
-trust:2,
-response:"Elfi becomes quiet, but your words stay with her."
+text:"\"Your strength is incredible Elfi... but you shouldn't have had to suffer alone, I'm here now.\"",
+trust:7,
+response:"Elfi smiled softly before becoming quiet, remembering- because your words made her remember someone she once knew."
 },
 
 
 {
-text:"\"I don't know if I can become the person this Willow needs.\"",
+text:"\"I don't know if I can become the person this Willow needs Elfi.\"",
 trust:1,
 response:"Elfi looks at you gently. She understands your fear."
 }

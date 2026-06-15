@@ -13,11 +13,12 @@ const [index,setIndex] = useState(-1);
 const [trust,setTrust] = useState(0);
 
 
-const [choiceMade,setChoiceMade] = useState(false);
+const [locked,setLocked] = useState(false);
 
 
 
 const scene:any = index === -1 ? null : chapter2Story[index];
+
 
 
 
@@ -33,23 +34,25 @@ return;
 }
 
 
+if(scene.type==="choice") return;
 
-if(scene.type === "choice"){
 
-return;
+
+if(index < chapter2Story.length-1){
+
+setIndex(index+1);
+
+}
+
+else{
+
+localStorage.setItem("chapter2Complete","true");
 
 }
 
 
-
-if(index < chapter2Story.length - 1){
-
-setIndex(index + 1);
-
 }
 
-
-}
 
 
 
@@ -57,194 +60,105 @@ setIndex(index + 1);
 function choose(choice:any){
 
 
-if(choiceMade){
-
-return;
-
-}
+if(locked)return;
 
 
-
-setChoiceMade(true);
+setLocked(true);
 
 
 setTrust(trust + choice.trust);
 
 
-setIndex(index + 1);
+setIndex(index+1);
 
 
 }
 
-
-
-function displayText(text:string){
-
-
-if(text.startsWith("\"") && text.endsWith("\"")){
-
-return text;
-
-}
-
-
-return text;
-
-
-}
 
 
 
 return(
 
-
 <main
-
 
 onClick={next}
 
-
 className="
-
 min-h-screen
-
 bg-slate-950
-
 text-white
-
 flex
-
 items-center
-
 justify-center
-
 p-10
-
 cursor-pointer
-
 "
-
 
 >
 
 
-<div className="max-w-5xl text-center">
-
+<div className="
+max-w-5xl
+text-center
+">
 
 
 {
 
-
 index === -1 && (
 
-
-
-<h1 className="text-6xl font-bold text-blue-300">
+<h1 className="
+text-6xl
+font-bold
+text-blue-300
+">
 
 Chapter Two
 
 </h1>
 
-
-
 )
-
-
 
 }
 
 
 
-
-
-{
-
-
-scene && (
-
+{scene && (
 
 <>
 
 
 {scene.speaker && (
 
-
-<h2
-
-className="
-
+<h2 className="
 text-4xl
-
 text-blue-300
-
 font-bold
-
 mb-8
-
-"
-
->
-
+">
 
 {scene.speaker}
 
-
 </h2>
-
 
 )}
 
 
 
-
-
-<p
-
-className="
-
+<p className="
 text-3xl
-
 leading-relaxed
+">
 
-"
-
-
->
-
-
-{
-
-
-scene.type === "dialogue"
-
-?
-
-
-displayText(scene.text)
-
-
-:
-
-scene.text
-
-
-
-}
-
-
+{scene.text}
 
 </p>
 
 
 
-
-
 {
 
-
-scene.type === "choice" && (
-
-
+scene.type==="choice" && (
 
 <div
 
@@ -252,51 +166,34 @@ onClick={(e)=>e.stopPropagation()}
 
 className="mt-10 space-y-5"
 
-
 >
-
 
 
 {
 
-
-scene.choices.map((choice:any,i:number)=>(
+scene.choices.map((c:any,i:number)=>(
 
 
 <button
 
-
 key={i}
 
-
-onClick={()=>choose(choice)}
-
+onClick={()=>choose(c)}
 
 className="
-
 block
-
 w-full
-
 bg-blue-600
-
-hover:bg-blue-700
-
 px-6
-
 py-4
-
 rounded-xl
-
 text-xl
-
 "
 
 
 >
 
-
-{String.fromCharCode(65+i)}. {choice.text}
+{String.fromCharCode(65+i)}. {c.text}
 
 
 </button>
@@ -304,39 +201,34 @@ text-xl
 
 ))
 
-
 }
-
 
 
 </div>
 
-
-
 )
-
-
 
 }
 
 
-
-<p className="mt-8 text-green-400">
+<p className="
+mt-8
+text-green-400
+">
 
 Trust: {trust}
 
 </p>
 
 
-</>
 
+</>
 
 )
 
 
+
 }
-
-
 
 
 

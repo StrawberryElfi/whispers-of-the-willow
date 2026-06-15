@@ -1,204 +1,206 @@
 "use client";
 
-console.log("CHAPTER PAGE LOADED");
+import {useEffect, useState} from "react";
 
-import { useEffect, useState } from "react";
 
+export default function Chapters(){
 
-export default function Chapters() {
 
+const [fullGame,setFullGame] = useState(false);
 
-  const [fullGame, setFullGame] = useState(false);
 
 
+useEffect(()=>{
 
-  useEffect(() => {
+const unlocked = localStorage.getItem("fullGame");
 
 
-    const unlocked = localStorage.getItem("fullGame");
+if(unlocked === "true"){
 
+setFullGame(true);
 
-    if (unlocked === "true") {
+}
 
-      setFullGame(true);
+},[]);
 
-    }
 
 
-  },[]);
 
+const chapters = [
 
+{
+id:1,
+title:"The Whispering Willows",
+status:"play"
+},
 
+{
+id:2,
+title:"Old Friend, New Threat",
+status:"play"
+},
 
-  const chapters = [
+{
+id:3,
+title:"Elfaria Fleur De Willows",
+status:fullGame ? "play" : "purchase"
+},
 
+{
+id:4,
+title:"What Will Be",
+status:fullGame ? "play" : "purchase"
+},
 
-    {
-      id:1,
-      title:"The Whispering Willows",
-      status:"play"
-    },
+{
+id:5,
+title:"Betrayal of the Willow",
+status:fullGame ? "play" : "purchase"
+},
 
+{
+id:6,
+title:"Final Battle",
+status:fullGame ? "play" : "purchase"
+}
 
-    {
-      id:2,
-      title:"The Forgotten Path",
-      status:"play"
-    },
+];
 
 
-    {
-      id:3,
-      title:"The Warden's Memory",
-      status: fullGame ? "play" : "locked"
-    },
 
 
-    {
-      id:4,
-      title:"The Cursed Forest",
-      status: fullGame ? "play" : "locked"
-    },
 
+return(
 
-    {
-      id:5,
-      title:"Elfaria's Truth",
-      status: fullGame ? "play" : "purchase"
-    },
+<main className="
+min-h-screen
+bg-slate-950
+text-white
+p-10
+">
 
 
-    {
-      id:6,
-      title:"The Final Willow",
-      status: fullGame ? "play" : "purchase"
-    }
+<h1 className="
+text-5xl
+font-bold
+mb-10
+">
 
+Chapters
 
-  ];
+</h1>
 
 
 
 
+<div className="space-y-5">
 
-  return (
 
+{
 
-    <main className="min-h-screen bg-slate-950 text-white p-10">
+chapters.map(chapter=>(
 
 
-      <h1 className="text-5xl font-bold mb-8">
+<div
 
-        Chapters
+key={chapter.id}
 
-      </h1>
+className="
+bg-slate-800
+p-6
+rounded-xl
+"
 
 
+>
 
 
-      <div className="space-y-5">
+<h2 className="
+text-3xl
+font-bold
+">
 
+Chapter {chapter.id}
 
+</h2>
 
-        {chapters.map((chapter)=>(
 
+<p className="
+text-slate-300
+mb-5
+">
 
-          <div
+{chapter.title}
 
-          key={chapter.id}
+</p>
 
-          className="bg-slate-800 p-6 rounded-lg"
 
-          >
 
+{
 
+chapter.status === "play" && (
 
-            <h2 className="text-3xl font-bold">
 
-              Chapter {chapter.id}
+<a
 
-            </h2>
+href={`/chapter${chapter.id}`}
 
+className="
+bg-blue-600
+px-6
+py-3
+rounded-lg
+inline-block
+"
 
 
-            <p className="text-slate-300 mb-4">
+>
 
-              {chapter.title}
+Play
 
-            </p>
+</a>
 
 
+)
 
+}
 
 
-            {chapter.status === "play" && (
 
+{
 
-              <a
+chapter.status === "purchase" && (
 
-              href={`/chapter${chapter.id}`}
+<p className="text-yellow-400">
 
-              className="inline-block bg-blue-600 px-6 py-3 rounded-lg"
+🔒 Full Game Required
 
-              >
+</p>
 
-                Play
+)
 
-              </a>
+}
 
 
-            )}
 
+</div>
 
 
 
+))
 
+}
 
-            {chapter.status === "locked" && (
 
 
-              <p className="text-red-400">
+</div>
 
-                🔒 Complete previous chapter
 
-              </p>
 
+</main>
 
-            )}
 
-
-
-
-
-
-            {chapter.status === "purchase" && (
-
-
-              <p className="text-yellow-400">
-
-                🔒 Full Game Required
-
-              </p>
-
-
-            )}
-
-
-
-          </div>
-
-
-        ))}
-
-
-
-      </div>
-
-
-    </main>
-
-
-  );
+)
 
 
 }

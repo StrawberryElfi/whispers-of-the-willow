@@ -21,13 +21,13 @@ text:"The ancient Willow stood quietly behind you, its branches moving gently wi
 
 {
 type:"narration",
-text:"And beside it stood Elfi."
+text:"And beside it stood Elfaria."
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"Did you sleep well?\""
 },
 
@@ -64,35 +64,35 @@ text:"A mysterious Willow that chose you."
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"I know this is overwhelming.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"But we do not have much time.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"The Willow showed me something last night.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"Another attack is coming.\""
 },
 
 
 {
 type:"narration",
-text:"The gentle expression on Elfi's face disappears."
+text:"The gentle expression on Elfaria's face disappears."
 },
 
 
@@ -104,54 +104,89 @@ text:"For a moment, you see the Warden she truly is."
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"The ones who hunted the Willow before... they may have found us again.\""
+speaker:"Elfaria",
+text:"\"A group of hunters may have found us...\""
+},
+
+{
+type:"dialogue",
+speaker:"Elfaria",
+text:"\"They call themselves...Defiler\""
+},
+
+{
+type:"thought",
+text:"\"Defiler...Like from-.\""
+},
+
+{
+type:"dialogue",
+speaker:"Elfaria",
+text:"\"Yes but I do not know if it's the same group or not because they all should've died that day.\""
+},
+
+{
+type:"thought",
+text:"\"The day you overclocked.\""
+},
+
+{
+type:"dialogue",
+speaker:"Elfaria",
+text:"\"Yes.\""
+},
+
+{
+type:"narration",
+text:"The warden was now gone, in her eyes were just sadness and perhaps...."
+},
+
+{
+type:"narration",
+text:"Regret."
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"I need help.\""
-},
-
-
-{
-type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"There is someone I trust.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"An old friend.\""
 },
 
 
 {
 type:"narration",
-text:"Elfi begins preparing to leave the Willow."
+text:"Elfaria begins preparing to leave with a basket in hand."
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"We will visit the Beast-kin kingdom.\""
+speaker:"Elfaria",
+text:"\"We will visit the Beast-kin kingdom, Valutina.\""
+},
+
+{
+type:"thought",
+text:"\"Valutina?.\""
+},
+
+{
+type:"narration",
+text:"With that, the journey began with the sun still rising."
 },
 
 
 {
 type:"narration",
-text:"The journey through the forest is peaceful."
-},
-
-
-{
-type:"narration",
-text:"Almost too peaceful."
+text:"It was a peaceful morning, almost too peaceful."
 },
 
 
@@ -166,11 +201,6 @@ type:"narration",
 text:"The feeling of being watched."
 },
 
-
-{
-type:"thought",
-text:"\"Someone is following us...\""
-},
 
 
 {
@@ -187,7 +217,7 @@ text:"Nothing."
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"Something wrong?\""
 },
 
@@ -201,14 +231,14 @@ text:"\"I feel like someone is watching us.\""
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"...I do not sense anyone nearby.\""
 },
 
 
 {
 type:"narration",
-text:"Even Elfi looks slightly uncertain."
+text:"Even Elfaria looks slightly uncertain."
 },
 
 
@@ -220,21 +250,21 @@ text:"Eventually, the two of you arrive at a hidden forest path."
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"Before we meet my friend... there is something important.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"Bring these.\""
 },
 
 
 {
 type:"narration",
-text:"She hands you a basket filled with freshly picked strawberries."
+text:"She hands you one of the basket she had prepared and with a snap of her fingers, the basket filled itself with fresh strawberries."
 },
 
 
@@ -246,14 +276,14 @@ text:"\"Strawberries?\""
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"It is a peace offering.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"And also because he loves them.\""
 },
 
@@ -267,7 +297,7 @@ text:"\"He?\""
 
 {
 type:"dialogue",
-speaker:"Elfi",
+speaker:"Elfaria",
 text:"\"The Beast-kin King.\""
 },
 
@@ -280,33 +310,39 @@ text:"You stop walking."
 
 {
 type:"thought",
-text:"\"A king... loves strawberries?\""
+text:"\"The beast-kin king... loves strawberries?\""
 },
 
 
 {
 type:"narration",
-text:"Elfi smiles slightly."
+text:"Elfaria smiles slightly."
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"Very few people know.\""
+speaker:"Elfaria",
+text:"\"Keep it that way.\""
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"And I would prefer it stays that way.\""
+speaker:"Elfaria",
+text:"\"We would not want to reveal their kingdom's biggest secrets.\""
 },
 
 
 {
 type:"narration",
-text:"Before you can respond..."
+text:"she chucked and there is was again, the hint of the carefree elf before the day she got chosen.."
+},
+
+
+{
+type:"narration",
+text:"But before you could say anything..."
 },
 
 
@@ -317,220 +353,291 @@ text:"The basket suddenly shakes."
 
 
 {
-type:"dialogue",
-speaker:"???",
-text:"\"Did someone say strawberries?\""
-},
-
-
-{
 type:"narration",
-text:"A small creature-like magic flickers through the air."
-},
-
-
-{
-type:"narration",
-text:"Before your eyes..."
-},
-
-
-{
-type:"narration",
-text:"Your ears become strawberry-shaped."
+text:"A black cat jumps ontop of the basket, munching on the strawberries."
 },
 
 
 {
 type:"thought",
-text:"\"...What?\""
+text:"\"Hey! These are not for you little one.\""
 },
-
-
-{
-type:"dialogue",
-speaker:"Elfi",
-text:"\"Kuwa...\""
-},
-
 
 {
 type:"narration",
-text:"Elfi sighs, but she is clearly used to this."
+text:"Elfaria was now lauging and had no intention of shooing the cat away."
 },
 
-
 {
-type:"dialogue",
-speaker:"Kuwa",
-text:"\"Relax. It is temporary.\""
-},
-
-
-{
-type:"dialogue",
-speaker:"Kuwa",
-text:"\"Probably.\""
-},
-
-
-{
-type:"narration",
-text:"A laugh echoes through the forest."
-},
-
-
-{
-type:"dialogue",
-speaker:"Kuwa",
-text:"\"It has been too long, Elfi.\""
-},
-
-
-{
-type:"narration",
-text:"A beast-kin approaches."
-},
-
-
-{
-type:"narration",
-text:"But unlike the image you expected of a king..."
-},
-
-
-{
-type:"narration",
-text:"He looks relaxed. Almost playful."
-},
-
-
-{
-type:"dialogue",
-speaker:"Kuwa",
-text:"\"You brought strawberries. You really do know me.\""
-},
-
-
-{
-type:"narration",
-text:"Behind him stands another figure."
-},
-
-
-{
-type:"narration",
-text:"A wolf beast-kin."
-},
-
-
-{
-type:"narration",
-text:"His expression is serious."
+type:"thought",
+text:"\"Elfi...A little help?.\""
 },
 
 
 {
 type:"dialogue",
 speaker:"???",
-text:"\"Who are they?\""
-},
-
-
-{
-type:"dialogue",
-speaker:"Elfi",
-text:"\"This is the one the Willow chose.\""
+text:"\"You two are?\""
 },
 
 
 {
 type:"narration",
-text:"The wolf's eyes narrow."
+text:"Elfaria stopped laughing."
+},
+
+{
+type:"narration",
+text:"You froze"
+},
+
+{
+type:"narration",
+text:"The voice deep and close"
+},
+
+{
+type:"narration",
+text:"You turned around to see a figure standing there, right behind you and you could feel his warmth from where you stood"
+},
+
+
+{
+type:"narration",
+text:"A man, white hair with red tips, his eyes blue like the morning sky but what caught you attention was his ears"
+},
+
+{
+type:"narration",
+text:"Wolf ears, and fluffy tail that matched his hair"
+},
+
+{
+type:"narration",
+text:"A beast-kin"
+},
+
+
+{
+type:"narration",
+text:"You heald your breath, trying to calm yourself down but the basket in your hand was shaking and you could feel your heart pounding in your chest"
 },
 
 
 {
 type:"dialogue",
 speaker:"???",
-text:"\"The Willow chose someone... and you brought them here?\""
-},
-
-
-{
-type:"dialogue",
-speaker:"Elfi",
-text:"\"They are not a threat.\""
-},
-
-
-{
-type:"dialogue",
-speaker:"???",
-text:"\"I will decide that.\""
+text:"\"Nat Caryophyllis, stop scaring our guests.\""
 },
 
 
 {
 type:"narration",
-text:"The wolf beast-kin watches you carefully."
+text:"The voice came from the basket, and you looked down to see a small black cat staring up at the wolf beast-kin."
+},
+
+
+{
+type:"thought",
+text:"\"...Huh?\""
+},
+
+
+{
+type:"narration",
+text:"The white haired beast looked down at the black at on top of the strawberries and froze"
+},
+
+{
+type:"narration",
+text:"His expression tensed, his ears drooped and his tail almost tucked between his legs."
 },
 
 
 {
 type:"dialogue",
-speaker:"Elfi",
-text:"\"This is Nat.\""
+speaker:"Nat Caryophyllis",
+text:"\"Your majesty!\""
+},
+
+
+{
+type:"narration",
+text:"Nat quickly bowed down to the cat, who was still munching on the strawberries and looked up at you with wide eyes."
+},
+
+
+{
+type:"dialogue",
+speaker:"Elfaria",
+text:"\"Kuwashi Valutina, it's been a while my friend\""
+},
+
+
+{
+type:"narration",
+text:"Kuwa, the Beast-kin King, looked at you and Elfaria with a playful expression on his face before jumping off the basket"
+},
+
+
+{
+type:"narration",
+text:"Upon landing, he transformed into his human form, his cat ears and tail was still visible but his overall appearance was more humanoid, with a lean build and a mischievous smile."
+},
+
+
+{
+type:"dialogue",
+speaker:"Kuwashi",
+text:"\"Yo! Elfi, long time so see and you can life your head now Nat.\""
 },
 
 
 {
 type:"dialogue",
 speaker:"Nat",
-text:"\"I am the Beast-kin Guardian.\""
+text:"\"Do you.. know them your majesty?\""
 },
 
 
 {
 type:"narration",
-text:"He recently inherited the role after the previous guardian stepped down."
+text:"Nat finally stood upright, looked at you and Elfaria with a confused expression, clearly not understanding the relationship between the two of you."
+},
+
+
+{
+type:"dialogue",
+speaker:"Kuwashi",
+text:"\"This one I know.\""
 },
 
 
 {
 type:"narration",
-text:"And clearly... he does not trust easily."
+text:"Kuwashi looked at Elfaria with a warm smile, but when his gaze shifted to you, it became more curious"
 },
 
 
 {
-type:"choice",
-text:"How do you respond?",
-
-choices:[
-
-{
-text:"Reach out and touch Nat's tail.",
-trust:0,
-response:"Nat freezes, his face turning red as he quickly pulls his tail away. Elfi immediately grabs your arm and pulls you back."
+type:"dialogue",
+speaker:"Kuwashi",
+text:"\"This one i'm not sure.\""
 },
 
 
 {
-text:"Stay professional and follow Elfi's lead.",
-trust:5,
-response:"Nat relaxes slightly. Kuwa appears happily after smelling Elfi and the strawberries."
+type:"dialogue",
+speaker:"Kuwashi",
+text:"\"Are they with you Elfi?.\""
 },
 
 
 {
-text:"Stare silently at Nat.",
-trust:-3,
-response:"Nat becomes uncomfortable. Kuwa notices and seems less pleased with you."
-}
+type:"dialogue",
+speaker:"Elfaria",
+text:"\"Yes Kuwa, they're the chosen Conduit.\""
+},
 
-]
 
+{
+type:"narration",
+text:"The air shifted, both Kuwashi and Nat was now studying you"
+},
+
+
+{
+type:"dialogue",
+speaker:"Kuwashi",
+text:"\"The Willow finally found the chosen one.\""
+},
+
+
+{
+type:"narration",
+text:"Elfaria nodded, but there was a hint of sadness in her eyes, a sadness that you couldn't quite understand yet."
+},
+
+{
+type:"narration",
+text:"Then Kuwashi snapped his fingers and suddenly somehow for a moment you could hear the sound of the birds chirping, the leaves rustling and the wind blowing clearer than before"
+},
+
+{
+type:"dialogue",
+speaker:"Kuwashi",
+text:"\"Not again...Kuwa!!.\""
+},
+
+{
+type:"narration",
+text:"You looked up towards the sound, seeing Elfaria you noticed her elf ears were now replaced with..."
+},
+
+{
+type:"narration",
+text:"A strawberry..."
+},
+
+{
+type:"narration",
+text:"Then you look at Nat whos ears were also replaced by a strawberry..."
+},
+
+
+{
+type:"thought",
+text:"\"...Y-your ears\""
+},
+
+
+{
+type:"dialogue",
+speaker:"Elfaria",
+text:"\"You have one too.\""
+},
+
+
+{
+type:"narration",
+text:"You reached out to touch your ears and they were...gone"
+},
+
+
+{
+type:"narration",
+text:"You moved your hand to the top of your head and sure enough, there was a soft cat like ears shapped like a strawberry"
+},
+
+
+{
+type:"thought",
+text:"\"No wonder I could hear the birds so clearly.\""
+},
+
+{
+type:"dialogue",
+speaker:"Kuwashi",
+text:"\"Don't worry, it's only temporary.\""
+},
+
+{
+type:"dialogue",
+speaker:"Kuwashi",
+text:"\"Probably....\""
+},
+
+
+{
+type:"dialogue",
+speaker:"Nat and Elfaria",
+text:"\"Probably!!??.\""
+},
+
+
+{
+type:"narration",
+text:"Kuwashi burst out laughing so hard he had to hold his stomach, while Nat and Elfaria just looked at him in disbelief, clearly used to this behavior."
 },
 
 
