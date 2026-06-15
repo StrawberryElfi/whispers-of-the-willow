@@ -119,6 +119,22 @@ playerTag
 
 
 
+// keep trust system starting value
+
+if(!localStorage.getItem("trust")){
+
+localStorage.setItem(
+
+"trust",
+
+"0"
+
+);
+
+}
+
+
+
 setIndex(index + 1);
 
 
@@ -157,7 +173,9 @@ return "???";
 
 if(scene.speaker==="PLAYER"){
 
+
 return playerName;
+
 
 }
 
@@ -202,7 +220,7 @@ return(
 
 
 
-<div
+<main
 
 
 onClick={next}
@@ -323,7 +341,10 @@ scene.type === "nameInput" && (
 
 <div
 
+
 onClick={(e)=>e.stopPropagation()}
+
+
 
 className="
 
@@ -331,10 +352,43 @@ mt-10
 
 space-y-6
 
+bg-slate-800
+
+p-8
+
+rounded-xl
+
+border
+
+border-slate-600
+
 "
 
 
 >
+
+
+
+<h3
+
+className="
+
+text-2xl
+
+text-white
+
+mb-4
+
+"
+
+
+>
+
+Enter your name
+
+</h3>
+
+
 
 
 
@@ -348,6 +402,8 @@ autoFocus
 
 className="
 
+bg-white
+
 text-black
 
 text-2xl
@@ -358,10 +414,14 @@ rounded-lg
 
 w-full
 
+border-2
+
+border-blue-400
+
 "
 
 
-placeholder="Enter your name"
+placeholder="Your name"
 
 
 
@@ -370,7 +430,6 @@ value={playerName}
 
 
 onChange={(e)=>
-
 
 setPlayerName(e.target.value)
 
@@ -391,6 +450,8 @@ setPlayerName(e.target.value)
 
 className="
 
+bg-white
+
 text-black
 
 text-2xl
@@ -400,6 +461,10 @@ p-4
 rounded-lg
 
 w-full
+
+border-2
+
+border-purple-400
 
 "
 
@@ -435,6 +500,7 @@ e.target.value.replace(/\D/g,"")
 
 
 
+
 <button
 
 
@@ -443,10 +509,15 @@ onClick={(e)=>{
 
 e.stopPropagation();
 
+
 confirmName();
 
 
 }}
+
+
+
+disabled={!playerName}
 
 
 
@@ -462,6 +533,8 @@ rounded-xl
 
 text-xl
 
+disabled:opacity-50
+
 "
 
 
@@ -473,7 +546,6 @@ Confirm
 
 
 </button>
-
 
 
 
@@ -502,7 +574,7 @@ Confirm
 
 
 
-</div>
+</main>
 
 
 
