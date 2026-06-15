@@ -1,13 +1,20 @@
 "use client";
 
-import {useState} from "react";
-import {chapter1Story} from "../game/chapter1Story";
+import { useState } from "react";
+import { chapter1Story } from "../game/chapter1Story";
 
 
 export default function Chapter1(){
 
 
 const [index,setIndex] = useState(0);
+
+const [playerName,setPlayerName] = useState("");
+
+const [playerTag,setPlayerTag] = useState("");
+
+const [elfariaIntroduced,setElfariaIntroduced] = useState(false);
+
 
 
 const scene:any = chapter1Story[index];
@@ -17,9 +24,25 @@ const scene:any = chapter1Story[index];
 function next(){
 
 
-if(index < chapter1Story.length-1){
+if(scene.type === "nameInput"){
 
-setIndex(index+1);
+return;
+
+}
+
+
+
+if(scene.speaker === "Elfaria"){
+
+setElfariaIntroduced(true);
+
+}
+
+
+
+if(index < chapter1Story.length - 1){
+
+setIndex(index + 1);
 
 }
 
@@ -28,6 +51,76 @@ else{
 window.location.href="/chapter2";
 
 }
+
+
+}
+
+
+
+
+function saveName(){
+
+
+localStorage.setItem(
+"playerName",
+playerName
+);
+
+
+localStorage.setItem(
+"playerTag",
+playerTag
+);
+
+
+localStorage.setItem(
+"trust",
+"0"
+);
+
+
+setIndex(index + 1);
+
+
+}
+
+
+
+
+function replaceName(text:string){
+
+
+return text.replace(
+"{name}",
+playerName || "you"
+);
+
+
+}
+
+
+
+
+function speakerName(){
+
+
+if(scene.speaker === "Elfaria" && !elfariaIntroduced){
+
+return "???";
+
+}
+
+
+
+if(scene.speaker === "PLAYER"){
+
+return playerName;
+
+}
+
+
+
+return scene.speaker;
 
 
 }
@@ -52,7 +145,6 @@ p-10
 cursor-pointer
 "
 
-
 >
 
 
@@ -62,7 +154,9 @@ text-center
 ">
 
 
-{scene.speaker && (
+{
+
+scene.speaker && (
 
 <h2 className="
 text-4xl
@@ -71,11 +165,15 @@ font-bold
 mb-8
 ">
 
-{scene.speaker}
+{speakerName()}
 
 </h2>
 
-)}
+)
+
+}
+
+
 
 
 
@@ -84,11 +182,115 @@ text-3xl
 leading-relaxed
 ">
 
-
-{scene.text}
-
+{replaceName(scene.text)}
 
 </p>
+
+
+
+
+
+
+{
+
+scene.type === "nameInput" && (
+
+<div
+
+onClick={(e)=>e.stopPropagation()}
+
+className="
+mt-10
+space-y-5
+"
+
+>
+
+
+<input
+
+className="
+text-black
+p-4
+rounded-lg
+text-xl
+w-full
+"
+
+placeholder="Your name"
+
+maxLength={14}
+
+value={playerName}
+
+onChange={(e)=>
+setPlayerName(e.target.value)
+}
+
+/>
+
+
+
+<input
+
+className="
+text-black
+p-4
+rounded-lg
+text-xl
+w-full
+"
+
+placeholder="Tag (numbers only)"
+
+maxLength={5}
+
+value={playerTag}
+
+onChange={(e)=>
+
+setPlayerTag(
+
+e.target.value.replace(/\D/g,"")
+
+)
+
+}
+
+
+/>
+
+
+
+
+<button
+
+onClick={saveName}
+
+disabled={!playerName || !playerTag}
+
+className="
+bg-blue-600
+px-6
+py-3
+rounded-lg
+text-xl
+"
+
+>
+
+Confirm
+
+</button>
+
+
+
+</div>
+
+
+)
+
+}
 
 
 
