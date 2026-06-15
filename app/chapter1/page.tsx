@@ -19,6 +19,10 @@ const [playerName,setPlayerName] = useState("");
 const [playerTag,setPlayerTag] = useState("");
 
 
+const [error,setError] = useState("");
+
+
+
 const [elfariaIntroduced,setElfariaIntroduced] = useState(false);
 
 
@@ -91,7 +95,14 @@ function confirmName(){
 
 
 
-if(playerName.trim()===""){
+const cleanName = playerName.trim().toLowerCase();
+
+
+
+
+if(cleanName === ""){
+
+setError("Please enter a name.");
 
 return;
 
@@ -99,11 +110,37 @@ return;
 
 
 
+
+
+if(cleanName === "elfaria"){
+
+setError("This name already belongs to someone in this world.");
+
+return;
+
+}
+
+
+
+
+
+if(playerTag.length !== 4){
+
+setError("Your tag must be exactly 4 numbers.");
+
+return;
+
+}
+
+
+
+
+
 localStorage.setItem(
 
 "playerName",
 
-playerName
+playerName.trim()
 
 );
 
@@ -119,7 +156,7 @@ playerTag
 
 
 
-// keep trust system starting value
+
 
 if(!localStorage.getItem("trust")){
 
@@ -132,6 +169,8 @@ localStorage.setItem(
 );
 
 }
+
+
 
 
 
@@ -377,8 +416,6 @@ text-2xl
 
 text-white
 
-mb-4
-
 "
 
 
@@ -398,6 +435,10 @@ Enter your name
 
 
 autoFocus
+
+
+maxLength={12}
+
 
 
 className="
@@ -421,7 +462,7 @@ border-blue-400
 "
 
 
-placeholder="Your name"
+placeholder="Your name (12 characters max)"
 
 
 
@@ -429,11 +470,17 @@ value={playerName}
 
 
 
-onChange={(e)=>
+onChange={(e)=>{
 
-setPlayerName(e.target.value)
+setPlayerName(
 
-}
+e.target.value.slice(0,12)
+
+);
+
+setError("");
+
+}}
 
 
 
@@ -443,9 +490,25 @@ setPlayerName(e.target.value)
 
 
 
+<p className="text-slate-300">
+
+{playerName.length}/12 characters
+
+</p>
+
+
+
+
+
+
 
 
 <input
+
+
+
+maxLength={4}
+
 
 
 className="
@@ -469,7 +532,7 @@ border-purple-400
 "
 
 
-placeholder="Tag (numbers only)"
+placeholder="Tag (4 numbers only)"
 
 
 
@@ -477,21 +540,58 @@ value={playerTag}
 
 
 
-onChange={(e)=>
+onChange={(e)=>{
 
 
 setPlayerTag(
 
-e.target.value.replace(/\D/g,"")
+e.target.value
 
-)
+.replace(/\D/g,"")
+
+.slice(0,4)
+
+);
 
 
-}
+setError("");
+
+}}
 
 
 
 />
+
+
+
+
+
+<p className="text-slate-300">
+
+{playerTag.length}/4 numbers
+
+</p>
+
+
+
+
+
+
+{
+
+error && (
+
+
+<p className="text-red-400 text-xl">
+
+{error}
+
+</p>
+
+
+)
+
+}
 
 
 
@@ -517,7 +617,7 @@ confirmName();
 
 
 
-disabled={!playerName}
+disabled={!playerName || playerTag.length !== 4}
 
 
 
