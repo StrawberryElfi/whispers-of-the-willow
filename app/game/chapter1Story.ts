@@ -346,7 +346,7 @@ text:"\"My name...?\""
 {
 type:"nameInput",
 speaker:"???",
-text:"\"If you remember it please do tell me.\""
+text:"\"If you still remember it... tell me your name.\""
 },
 
 
@@ -355,6 +355,7 @@ type:"dialogue",
 speaker:"???",
 text:"\"Good.\""
 },
+
 
 
 {
@@ -718,9 +719,13 @@ text:"And Elfi stands alone."
 
 {
 type:"narration",
-text:"The one elf that had been overlooked by her own people because she was not strong enough to fight."
+text:"The one elf that had been overlooked by her own people because she was not strong enough to fight,."
 },
 
+{
+type:"narration",
+text:"The one born manaless in the world of magic."
+},
 
 {
 type:"dialogue",
@@ -732,7 +737,14 @@ text:"\"Move aside, elf. Unless you want to join them.\""
 {
 type:"dialogue",
 speaker:"Defiler",
-text:"\"That tree belongs to us now and if you listen we'll consider letting you live and warm our beds.\""
+text:"\"That tree belongs to us now and if you listen we'll consider letting you live...\""
+},
+
+
+{
+type:"dialogue",
+speaker:"Defiler",
+text:"\"And warm our beds.\""
 },
 
 
@@ -745,34 +757,6 @@ text:"Elfaria trembles."
 {
 type:"narration",
 text:"Because she knows what happens if she fails."
-},
-
-
-{
-type:"dialogue",
-speaker:"Elfaria",
-text:"\"I cannot heal this world.\""
-},
-
-
-{
-type:"dialogue",
-speaker:"Elfaria",
-text:"\"I cannot save everyone.\""
-},
-
-
-{
-type:"dialogue",
-speaker:"Elfaria",
-text:"\"But I can stand here.\""
-},
-
-
-{
-type:"dialogue",
-speaker:"Elfaria",
-text:"\"And I can stop you.\""
 },
 
 
@@ -813,9 +797,8 @@ text:"A weapon bound to Elfaria's life."
 
 
 {
-type:"dialogue",
-speaker:"Elfaria",
-text:"\"The Silver Spear of the Willow's Tear.\""
+type:"narration",
+text:"The Silver Spear of the Willow's Tear."
 },
 
 
@@ -833,13 +816,37 @@ text:"The moment Elfaria accepted the spear, the magic changed her."
 
 {
 type:"narration",
-text:"Her healing abilities vanished."
+text:"She clutched her left eye in agony,."
 },
 
 
 {
 type:"narration",
-text:"The power that once restored life became something else."
+text:"Screaming in pain."
+},
+
+
+{
+type:"narration",
+text:"The defilers frozed"
+},
+
+
+{
+type:"narration",
+text:"Blood trickled down the left side ofher face."
+},
+
+
+{
+type:"narration",
+text:"The gentle green in her eys were gone. Replaced by a burning crimson."
+},
+
+
+{
+type:"narration",
+text:"The once manaless elf was now bound to the Willow's magic but also it's wrath."
 },
 
 
@@ -857,33 +864,33 @@ text:"Destruction."
 
 {
 type:"narration",
-text:"A curse placed upon the Warden."
+text:"The defilers charged at her but the spear was faster."
 },
 
 
 {
 type:"narration",
-text:"Her emerald eye remained."
+text:"Her movements weren't her own anymore. They were guided by the Willow's will to protect itself."
 },
 
 
 {
 type:"narration",
-text:"But the other became crimson."
+text:"Deadly yet graceful."
 },
 
 
 {
 type:"dialogue",
 speaker:"Elfaria",
-text:"\"The Willow gave me the strength to protect it.\""
+text:"\"The Willow gave me more than just strength, it gave me power.\""
 },
 
 
 {
 type:"dialogue",
 speaker:"Elfaria",
-text:"\"But it also made me carry the cost of that protection.\""
+text:"\"But that power came with a price.\""
 },
 
 
@@ -901,7 +908,12 @@ text:"Elfi grips the spear."
 
 {
 type:"narration",
-text:"Every movement drains her."
+text:"Her expression cold and merciless."
+},
+
+{
+type:"narration",
+text:"Her eyes epty."
 },
 
 
@@ -918,20 +930,37 @@ text:"The silver spear slowly becomes stained red with her own blood."
 
 
 {
-type:"narration",
-text:"Yet she continues standing."
+type:"dialogue",
+speaker:"Elfaria",
+text:"\"I overclocked.\""
 },
 
 
 {
 type:"narration",
-text:"Not because she cannot fall."
+text:"The Willow's conciounsness takes over her body, she was no longer herself."
 },
 
 
 {
 type:"narration",
-text:"Because she refuses to."
+text:"Blood pours from her left eye, blinding her."
+},
+
+
+{
+type:"narration",
+text:"Then she stopped."
+},
+
+{
+type:"narration",
+text:"She raised her hand with a powerful surge of mana flowing through. Everyone there could feel it."
+},
+
+{
+type:"narration",
+text:"Blood from enemies exploded inside out and with that one act, all defilers vanished leaving only a pool of red at her feet."
 },
 
 
@@ -946,23 +975,32 @@ type:"narration",
 text:"You return beneath the Whispering Willow."
 },
 
+{
+type:"narration",
+text:"Breathing heavily as if you had just finished a fierce battle yourself."
+},
 
 {
 type:"narration",
-text:"Elfaria looks exhausted."
+text:"Then you look at Elfi."
+},
+
+{
+type:"narration",
+text:"She looks exhausted."
 },
 
 
 {
 type:"narration",
-text:"For a moment, you see the centuries of loneliness she carries."
+text:"For a moment, you see the centuries of loneliness she carries and the weight of the world she protects."
 },
 
 
 {
 type:"dialogue",
 speaker:"Elfaria",
-text:"\"That is why the Willow chose you.\""
+text:"\"It chose you because my time is running out.\""
 },
 
 
@@ -995,7 +1033,7 @@ choices:[
 
 {
 text:"\"You carried this burden alone for so long Elfi, is there anything I can do to help?\"",
-trust:3,
+trust:4,
 response:"Elfi looks surprised. A small smile appears on her face."
 },
 
@@ -1009,7 +1047,7 @@ response:"Elfi smiled softly before becoming quiet, remembering- because your wo
 
 {
 text:"\"I don't know if I can become the person this Willow needs Elfi.\"",
-trust:1,
+trust:2,
 response:"Elfi looks at you gently. She understands your fear."
 }
 
@@ -1032,7 +1070,7 @@ text:"Your journey with Elfi has only just begun."
 
 {
 type:"narration",
-text:"And somewhere deep within the forest... something watches the chosen soul it called from the stars."
+text:"And somewhere deep down, you know that your story will be forever intertwined with hers."
 }
 
 
