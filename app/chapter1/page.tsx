@@ -22,9 +22,24 @@ const [playerTag,setPlayerTag] = useState("");
 const [error,setError] = useState("");
 
 
+const [choiceMade,setChoiceMade] = useState(false);
+
+
+const [trust,setTrust] = useState(
+
+Number(
+typeof window !== "undefined"
+?
+localStorage.getItem("trust")
+:
+0
+)
+
+);
+
+
 
 const [elfariaIntroduced,setElfariaIntroduced] = useState(false);
-
 
 
 
@@ -36,12 +51,17 @@ const scene:any = chapter1Story[index];
 
 
 
-
 function next(){
 
 
+if(scene.type==="nameInput"){
 
-if(scene.type === "nameInput"){
+return;
+
+}
+
+
+if(scene.type==="choice"){
 
 return;
 
@@ -50,12 +70,11 @@ return;
 
 
 
-
 if(
 
-scene.speaker === "Elfaria" ||
+scene.speaker==="Elfaria" ||
 
-scene.speaker === "Elfaria Fleur De Willows"
+scene.speaker==="Elfaria Fleur De Willows"
 
 ){
 
@@ -67,9 +86,9 @@ setElfariaIntroduced(true);
 
 
 
-if(index < chapter1Story.length - 1){
+if(index < chapter1Story.length-1){
 
-setIndex(index + 1);
+setIndex(index+1);
 
 }
 
@@ -91,6 +110,8 @@ window.location.href="/chapter2";
 
 
 
+
+
 function confirmName(){
 
 
@@ -99,8 +120,7 @@ const cleanName = playerName.trim().toLowerCase();
 
 
 
-
-if(cleanName === ""){
+if(cleanName===""){
 
 setError("Please enter a name.");
 
@@ -110,75 +130,114 @@ return;
 
 
 
+if(cleanName==="elfaria"){
 
-
-if(cleanName === "elfaria"){
-
-setError("This name already belongs to someone in this world.");
-
-return;
-
-}
-
-
-
-
-
-if(playerTag.length !== 4){
-
-setError("Your tag must be exactly 4 numbers.");
+setError(
+"This name already belongs to someone in this world."
+);
 
 return;
 
 }
 
+
+
+if(playerTag.length!==4){
+
+setError(
+"Your tag must be exactly 4 numbers."
+);
+
+return;
+
+}
 
 
 
 
 localStorage.setItem(
-
 "playerName",
-
 playerName.trim()
-
 );
 
 
 
 localStorage.setItem(
-
 "playerTag",
-
 playerTag
-
 );
 
 
 
+localStorage.setItem(
+"trust",
+"0"
+);
 
 
-if(!localStorage.getItem("trust")){
+
+setTrust(0);
+
+
+
+setIndex(index+1);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+function choose(choice:any){
+
+
+
+if(choiceMade){
+
+return;
+
+}
+
+
+
+
+const newTrust = trust + choice.trust;
+
+
+
+setTrust(newTrust);
+
+
 
 localStorage.setItem(
 
 "trust",
 
-"0"
+String(newTrust)
 
 );
 
+
+
+setChoiceMade(true);
+
+
+
+setIndex(index+1);
+
+
+
 }
 
 
 
-
-
-setIndex(index + 1);
-
-
-
-}
 
 
 
@@ -192,9 +251,9 @@ function speaker(){
 
 if(
 
-(scene.speaker === "Elfaria" ||
+(scene.speaker==="Elfaria" ||
 
-scene.speaker === "Elfaria Fleur De Willows")
+scene.speaker==="Elfaria Fleur De Willows")
 
 &&
 
@@ -205,16 +264,13 @@ scene.speaker === "Elfaria Fleur De Willows")
 
 return "???";
 
-
 }
 
 
 
 if(scene.speaker==="PLAYER"){
 
-
 return playerName;
-
 
 }
 
@@ -255,6 +311,7 @@ playerName || "you"
 
 
 
+
 return(
 
 
@@ -263,7 +320,6 @@ return(
 
 
 onClick={next}
-
 
 
 className="
@@ -308,9 +364,12 @@ text-center
 
 
 
+
+
 {
 
 scene.speaker && (
+
 
 
 <h2
@@ -330,7 +389,10 @@ mb-8
 
 >
 
+
 {speaker()}
+
+
 
 </h2>
 
@@ -360,7 +422,10 @@ leading-relaxed
 
 >
 
+
 {text()}
+
+
 
 </p>
 
@@ -372,18 +437,17 @@ leading-relaxed
 
 
 
+{/* NAME INPUT */}
+
+
 {
 
-scene.type === "nameInput" && (
-
+scene.type==="nameInput" && (
 
 
 <div
 
-
 onClick={(e)=>e.stopPropagation()}
-
-
 
 className="
 
@@ -397,49 +461,17 @@ p-8
 
 rounded-xl
 
-border
-
-border-slate-600
-
 "
 
 
 >
-
-
-
-<h3
-
-className="
-
-text-2xl
-
-text-white
-
-"
-
-
->
-
-Enter your name
-
-</h3>
-
-
-
-
-
 
 
 <input
 
-
 autoFocus
 
-
 maxLength={12}
-
-
 
 className="
 
@@ -455,19 +487,12 @@ rounded-lg
 
 w-full
 
-border-2
-
-border-blue-400
-
 "
 
 
-placeholder="Your name (12 characters max)"
-
-
+placeholder="Your name (12 characters)"
 
 value={playerName}
-
 
 
 onChange={(e)=>{
@@ -488,28 +513,10 @@ setError("");
 
 
 
-
-
-<p className="text-slate-300">
-
-{playerName.length}/12 characters
-
-</p>
-
-
-
-
-
-
-
-
 <input
 
 
-
 maxLength={4}
-
-
 
 className="
 
@@ -525,16 +532,10 @@ rounded-lg
 
 w-full
 
-border-2
-
-border-purple-400
-
 "
 
 
-placeholder="Tag (4 numbers only)"
-
-
+placeholder="Tag (4 numbers)"
 
 value={playerTag}
 
@@ -554,10 +555,7 @@ e.target.value
 );
 
 
-setError("");
-
 }}
-
 
 
 />
@@ -566,27 +564,61 @@ setError("");
 
 
 
-<p className="text-slate-300">
-
-{playerTag.length}/4 numbers
-
-</p>
-
-
-
-
-
 
 {
 
-error && (
+error &&
 
-
-<p className="text-red-400 text-xl">
+<p className="text-red-400">
 
 {error}
 
 </p>
+
+}
+
+
+
+
+
+
+
+<button
+
+onClick={(e)=>{
+
+e.stopPropagation();
+
+confirmName();
+
+}}
+
+
+
+className="
+
+bg-blue-600
+
+px-8
+
+py-4
+
+rounded-xl
+
+"
+
+>
+
+
+Confirm
+
+
+</button>
+
+
+
+
+</div>
 
 
 )
@@ -601,31 +633,67 @@ error && (
 
 
 
+{/* CHOICE SYSTEM */}
+
+
+
+{
+
+scene.type==="choice" && (
+
+
+
+<div
+
+onClick={(e)=>e.stopPropagation()}
+
+className="mt-10 space-y-5"
+
+
+>
+
+
+<h3 className="text-2xl text-purple-300">
+
+{scene.text}
+
+</h3>
+
+
+
+
+
+{
+
+scene.choices.map((choice:any,i:number)=>(
+
+
 <button
 
 
-onClick={(e)=>{
-
-
-e.stopPropagation();
-
-
-confirmName();
-
-
-}}
+key={i}
 
 
 
-disabled={!playerName || playerTag.length !== 4}
+disabled={choiceMade}
+
+
+
+onClick={()=>choose(choice)}
 
 
 
 className="
 
+block
+
+w-full
+
 bg-blue-600
 
-px-8
+hover:bg-blue-500
+
+px-6
 
 py-4
 
@@ -641,22 +709,27 @@ disabled:opacity-50
 >
 
 
-Confirm
+
+{String.fromCharCode(65+i)}.
+
+{choice.text}
 
 
 
 </button>
 
 
+))
+
+
+}
 
 
 
 </div>
 
 
-
 )
-
 
 
 }
@@ -667,15 +740,24 @@ Confirm
 
 
 
+
+<p className="text-green-400 mt-10">
+
+Trust: {trust}
+
+</p>
+
+
+
+
+
+
+
 </div>
 
 
 
-
-
-
 </main>
-
 
 
 )
